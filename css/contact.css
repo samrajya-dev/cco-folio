@@ -1,0 +1,108 @@
+html, body {
+	margin:0;
+	padding:0;
+	height:100%;
+	overflow: hidden;
+}
+
+
+*, *:before, *:after {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,50%);
+	--trans-dur: 0.3s;
+	font-size: calc(5px + (60 - 20) * (100vw - 320px) / (2560 - 320));
+}
+
+body {
+	background-color: var(--bg)!important;
+	color: var(--fg)!important;
+	display: flex;
+	flex-direction: column;
+	font: 1em/1.5 "DM Sans", sans-serif;
+	align-items: center;
+	transition: background-color var(--trans-dur), color var(--trans-dur);
+	min-width: 100vw;
+	min-height: 100vh;
+  	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+}
+
+
+
+.contact-section {
+  position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	height: 100vh;
+	background-color: var(--bg);
+	transform: translateX(100%);
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+	z-index: 10;
+}
+body.contact-on .contact-section {
+	transform: translateX(0);
+	-webkit-transition-delay: 400ms;
+	transition-delay: 400ms;
+}
+.contact-close {
+  position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 30px;
+	display: block;
+	overflow: hidden;
+	height: 30px;
+	-webkit-transition: all 200ms linear;
+	transition: all 200ms linear;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 36px 36px;
+	background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
+	cursor: pointer;
+	z-index: 11;
+}
+.contact-close:hover {
+    transform: rotate(90deg);
+}
+
+.copied {
+	display: none;
+}
+
+.form-control{
+    color: #1f98f9!important;
+    border-color: #1f98f9!important;
+    background-color: transparent!important;
+}
+.form-control::placeholder{
+    opacity: 0.5;
+    color: grey!important;
+  }
+
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,10%);
+		--fg: hsl(var(--hue),10%,90%);
+	}
+}
+/* Animations */
+@keyframes fade-fly-in {
+	from { opacity: 0; transform: translateY(100%); }
+	to { opacity: 1; transform: translateY(0); }
+}
