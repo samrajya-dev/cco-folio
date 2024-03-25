@@ -83,6 +83,9 @@ main{
   }
 
   @media (max-width:640px) {
+	body{
+	overflow-y: hidden;
+	}
 	.bento-1 {
 		right: 0;
 		left: 0;
@@ -94,6 +97,9 @@ main{
 	  }
 	  .bento-2 {
 		font-size: 24px;
+	  }
+	  footer{
+		margin-bottom: 20px;
 	  }
 }
 
