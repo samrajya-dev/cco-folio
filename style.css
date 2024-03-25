@@ -1,8 +1,17 @@
+html, body {
+	margin:0;
+	padding:0;
+	height:100%;
+  overflow: hidden;
+}
+
+
 *, *:before, *:after {
 	border: 0;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -31,239 +40,51 @@ body {
 }
 
 
-/* #Primary style
-================================================== */
-
-
-.bento-2 p{
-	font-size: 20px;
-	line-height: 1;
-	font-weight: 700;
-	color: color: var(--fg);;
+main{
+  position:relative;
+	min-height:100%;
+	background:#f9f9f9;
 }
-.bento-2 p span{
-	margin-bottom: 5px;
-	cursor: pointer;
+.col2 {
+  background-color: #121212;
+  border-radius: calc(0.5 * 4rem);
+  height:50%;
+  width: 18rem;
 }
 
-
-body.contact-on .bento-2 {
-	transform: scale(0.75);
-	-webkit-transition-delay: 0ms;
-	transition-delay: 0ms;
-}
-body.travel-on .bento-2 {
-	transform: rotateX(-10deg);
-	-webkit-transition-delay: 0ms;
-	transition-delay: 0ms;
-}
-body.wildlife-on .bento-2 {
-	transform: rotateX(-10deg);
-	-webkit-transition-delay: 0ms;
-	transition-delay: 0ms;
-}
-body.drop4-on .bento-2 {
-	transform: rotateX(-10deg);
-	-webkit-transition-delay: 0ms;
-	transition-delay: 0ms;
-}
-
-
-.section-center {
-    position: absolute;
-	width: 100%;
-	left: 0;
-	top: 50%;
-	transform: translateY(-50%);
-	z-index: 1;
-}
-
-.contact-text {
+.bento-m{
+	width:100%;
+	height:50%;
+/* 	background:red; */
+	position:absolute;
+  left:0;
+	right:0;
+	top:0;
+	bottom:0;
+  margin:auto;
   position: absolute;
-	font-size: 30px;
-	line-height: 1;
-	font-weight: 700;
-	color: color: var(--fg);;
-	letter-spacing: 2px;
-	top: 50%;
-	right: .5%;
-	cursor: pointer;
-	z-index: 2;
-	-webkit-writing-mode: vertical-lr;
-	writing-mode: vertical-lr;
-	transform: translateY(-50%) rotate(180deg);
-	-webkit-transition: all 200ms linear;
-	transition: all 200ms linear;
 }
-.contact-section {
-  position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	display: block;
-	overflow: hidden;
-	height: 100vh;
-	background-color: #1f98f9;
-	transform: translateX(100%);
-	-webkit-transition: all 300ms linear;
-	transition: all 300ms linear;
-	z-index: 10;
-}
-body.contact-on .contact-section {
-	transform: translateX(0);
-	-webkit-transition-delay: 400ms;
-	transition-delay: 400ms;
-}
-.contact-close {
-    position: absolute;
-	top: 20px;
-	right: 20px;
-	width: 30px;
-	display: block;
-	overflow: hidden;
-	height: 30px;
-	-webkit-transition: all 200ms linear;
-	transition: all 200ms linear;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 36px 36px;
-	background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
-	cursor: pointer;
-	z-index: 11;
-}
-.contact-close:hover {
-    transform: rotate(90deg);
-}
-
-
-.drop1-section,
-.drop2-section
-.drop3-section,
-.drop4-section {
-    position: fixed;
-	top: 100%;
-	left: 0;
-	padding: 100px 0;
-	width: 100%;
-	height: 100vh;
-	display: block;
-	overflow-x: hidden;
-	overflow-y: auto;
-	background-color: #102770;
-	-webkit-transition: all 300ms linear;
-	transition: all 300ms linear;
-	z-index: 10;
-}
-.drop1-close,
-.drop2-close,
-.drop3-close,
-.drop4-close {
-    position: absolute;
-	top: 20px;
-	right: 20px;
-	width: 30px;
-	display: block;
-	overflow: hidden;
-	height: 30px;
-	-webkit-transition: all 200ms linear;
-	transition: all 200ms linear;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 36px 36px;
-	background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
-	cursor: pointer;
-	z-index: 11;
-}
-.drop1-close:hover,
-.drop2-close:hover,
-.drop3-close:hover,
-.drop4-close:hover {
-    transform: rotate(90deg);
-}
-body.travel-on .travel-section {
-	top: 0;
-	-webkit-transition-delay: 400ms;
-	transition-delay: 400ms;
-}
-body.wildlife-on .wildlife-section {
-	top: 0;
-	-webkit-transition-delay: 400ms;
-	transition-delay: 400ms;
-}
-body.drop4-on .drop4-section {
-	top: 0;
-	-webkit-transition-delay: 400ms;
-	transition-delay: 400ms;
-}
-.drop1-section img,
-.drop2-section img,
-.drop3-section img,
-.drop4-section img {
-	margin-top: 30px;
-    width: 100%;
-	height: auto;
-	display: block;
-	border-radius: 4px;
-	box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-.drop1-section h3,
-.drop2-section h3,
-.drop3-section h3,
-.drop4-section h3 {
-	font-size: 7vw;
-	line-height: 1;
-	font-weight: 700;
-	letter-spacing: 1px;
-	color: #fff;
-}
-.drop1-section p,
-.drop2-section p,
-.drop3-section p,
-.drop4-section p {
-	font-size: 14px;
-	line-height: 1.7;
-	letter-spacing: 1px;
-	font-weight: 500;
-}
-.drop1-section p span,
-.drop2-section p span,
-.drop3-section p span,
-.drop4-section p span {
+.bento-2 a{
 	font-size: 20px;
-	line-height: 1.3;
+	line-height: 1;
 	font-weight: 700;
-	color: #ffeba7;
+  text-decoration: none;
+  color:#fff;
+}
+.bento-2 a:hover{
+  text-decoration: underline wavy;
+	color: #1f98f9;
 }
 
-
-
-@media (max-width: 967px) {
-	.hero-section h1{
-		font-size: 11vw;
-	}
-	.hero-section p{
-		font-size: 18px;
-	}
-	.hero-section p span{
-		margin-left: 10px;
-		margin-right: 10px;
-	}
-	.drop1-section h3,
-  .drop2-section h3,
-	.drop3-section h3,
-	.drop4-section h3 {
-		font-size: 13vw;
-	}
+.message a:hover{
+  text-decoration: underline wavy #1f98f9;
 }
-
-
-
-
-
-
-
-
-
+  .bento-1 {
+    position: fixed; 
+    right: 7%; 
+    top: 2%;
+    text-align: center;
+  }
 
 .clock {
 	margin: auto;
@@ -287,9 +108,9 @@ body.drop4-on .drop4-section {
   overflow: auto;
   width: 100vw;
   max-height: 100vh;
-  padding: .5rem .4rem;
-  padding-left: 15%;
-  padding-top: 15%;
+/*   padding: .5rem .4rem; */
+/*   padding-left: 15%;
+  padding-top: 15%; */
 }
 .bubble {
   overflow: hidden;
@@ -344,6 +165,119 @@ body.drop4-on .drop4-section {
   color: rgba(0,0,0,.5);
 }
 
+
+
+
+
+
+.contact-section {
+  position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	height: 100vh;
+	background-color: var(--fg);
+	transform: translateX(100%);
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+	z-index: 10;
+}
+body.contact-on .contact-section {
+	transform: translateX(0);
+	-webkit-transition-delay: 400ms;
+	transition-delay: 400ms;
+}
+.contact-close {
+  position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 30px;
+	display: block;
+	overflow: hidden;
+	height: 30px;
+	-webkit-transition: all 200ms linear;
+	transition: all 200ms linear;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 36px 36px;
+	background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
+	cursor: pointer;
+	z-index: 11;
+}
+.contact-close:hover {
+    transform: rotate(90deg);
+}
+.ecopyo {
+	color: var(--bg);
+}
+
+.copied {
+	display: none;
+  width: 100px;
+}
+
+.form-control{
+  border-color: #1f98f9;
+}
+
+.ab-section {
+  position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+  height: 100vh;
+  padding: 100px 0;
+  display: block;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: var(--fg);
+	transform: translateX(100%);
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+	z-index: 10;
+}
+.ab-biotext{
+  color: var(--bg);
+}
+body.ab-on .ab-section {
+	transform: translateX(0);
+	-webkit-transition-delay: 400ms;
+	transition-delay: 400ms;
+}
+.ab-close {
+  position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 30px;
+	display: block;
+	overflow: hidden;
+	height: 30px;
+	-webkit-transition: all 200ms linear;
+	transition: all 200ms linear;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 36px 36px;
+	background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
+	cursor: pointer;
+	z-index: 11;
+}
+.ab-close:hover {
+    transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
   .strip-1 {
     position: fixed;
     right: 3%;
@@ -354,41 +288,20 @@ body.drop4-on .drop4-section {
     border-width: 0px 10px 0px 0px;
   }
 
-
-  .bento-1 {
-    position: fixed; 
-    right: 5%; 
-    top: 2%;
-    text-align: center;
-  }
-
-  .bento-2 {
-    position: fixed; 
-    right: 40%; 
-    top: 50%;
-  }
-  .bento-2 img {
-  height: auto;
-  width: 300px;
-}
-
-.social-icons {
-  display: flex;
-  position: absolute;
-  bottom: 10px;
-}
 .social-icons a{
-  margin: 0 10px;
-  border-radius: 25%;
   cursor: pointer;
-  font-size: 1.5rem;
-  text-decoration: none;
-  padding: 20px;
-  background: #000;
-  color: #fff;
+  font-size: 30px;
 }
-a:hover {
-  background: #1f98f9;
+.social-icons i{
+  cursor: pointer;
+  font-size: 30px;
+  color:var(--fg);
+}
+.footer p{
+  color:var(--fg);
+}
+.social-icons i:hover {
+  color: #1f98f9;
 }
 
 /* Dark theme */
