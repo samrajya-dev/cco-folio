@@ -82,6 +82,23 @@ main{
     text-align: center;
   }
 
+  @media (max-width:640px) {
+	.bento-1 {
+		right: 0;
+		left: 0;
+		margin: auto;
+		font-size: 24px;
+	  }
+	  .messages{
+		display: none;
+	  }
+	  .bento-2 {
+		font-size: 24px;
+	  }
+}
+
+
+
 .clock {
 	margin: auto;
 	text-align: center;
